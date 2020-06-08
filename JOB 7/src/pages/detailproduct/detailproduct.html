@@ -1,0 +1,32 @@
+<!--
+  Generated template for the FormproductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{judul}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form action="">
+  <ion-card-content *ngFor="let p of products">
+    <ion-thumbnail>
+      <img *ngIf="p.image==null" src="https://ecommerce.jaroji.web.id/uploads/product/images/no-image.jpg" />
+      <img *ngIf="p.image!=null" src="https://ecommerce.jaroji.web.id/uploads/product/images/{{ p.image }}" />
+  </ion-thumbnail>
+    <ion-card-title>
+      {{ p.name.length > 20 ? p.name.substr(0,20)+'...': p.name}}
+    </ion-card-title>
+
+    <span class="kategori">
+      {{ p.kategori.nama }}
+    </span>
+    <p>
+      Rp. {{ p.price }}
+    </p>
+  </ion-card-content>
+</form>
+</ion-content>
